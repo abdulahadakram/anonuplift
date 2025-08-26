@@ -14,6 +14,13 @@ export const metadata: Metadata = {
   authors: [{ name: 'Anon Uplift Team' }],
   creator: 'Anon Uplift',
   publisher: 'Anon Uplift',
+  icons: {
+    icon: [
+      { url: '/favicon.ico' },
+      { url: '/favicon.svg', type: 'image/svg+xml' }
+    ],
+    apple: '/favicon.svg',
+  },
   formatDetection: {
     email: false,
     address: false,

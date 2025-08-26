@@ -1,11 +1,12 @@
 'use client';
 
-import { useSession } from 'next-auth/react';
+import { useSession, signOut } from 'next-auth/react';
 import { useRouter } from 'next/navigation';
 import { useEffect, useState } from 'react';
 import { Button } from '@/components/ui/button';
-import { Heart, MessageCircle, Filter, Download, Share2, Trash2, Flag } from 'lucide-react';
+import { Heart, MessageCircle, Filter, Download, Share2, Trash2, Flag, LogOut, User, Settings } from 'lucide-react';
 import { MessageDoc, MessageCategory } from '@/types';
+import Link from 'next/link';
 
 export default function InboxPage() {
   const { data: session, status } = useSession();
@@ -93,6 +94,10 @@ export default function InboxPage() {
     router.push(`/share/${messageId}`);
   };
 
+  const handleLogout = async () => {
+    await signOut({ callbackUrl: '/' });
+  };
+
   const getCategoryIcon = (category: MessageCategory) => {
     switch (category) {
       case 'compliment': return '💝';
@@ -134,6 +139,47 @@ export default function InboxPage() {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-pink-50 via-white to-blue-50">
+      {/* User Dashboard Header */}
+      <nav className="bg-white/80 backdrop-blur-md border-b border-gray-200 sticky top-0 z-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex justify-between items-center h-16">
+            <div className="flex items-center space-x-2">
+              <Heart className="h-8 w-8 text-pink-500" />
+              <span className="text-xl font-bold text-gray-900">Anon Uplift</span>
+            </div>
+            
+            <div className="flex items-center space-x-4">
+              {/* User Info */}
+              <div className="flex items-center space-x-3 bg-pink-50 rounded-full px-4 py-2">
+                <User className="h-4 w-4 text-pink-600" />
+                <span className="text-sm font-medium text-pink-800">
+                  @{session?.user?.username || 'user'}
+                </span>
+              </div>
+              
+              {/* Navigation Links */}
+              <Link href="/settings">
+                <Button variant="outline" size="sm">
+                  <Settings className="h-4 w-4 mr-2" />
+                  Settings
+                </Button>
+              </Link>
+              
+              {/* Logout Button */}
+              <Button 
+                variant="outline" 
+                size="sm" 
+                onClick={handleLogout}
+                className="text-red-600 border-red-200 hover:bg-red-50"
+              >
+                <LogOut className="h-4 w-4 mr-2" />
+                Logout
+              </Button>
+            </div>
+          </div>
+        </div>
+      </nav>
+
       <div className="max-w-4xl mx-auto p-6">
         {/* Header */}
         <div className="text-center mb-8">
@@ -145,7 +191,6 @@ export default function InboxPage() {
         {/* Stats */}
         <div className="grid grid-cols-1 md:grid-cols-4 gap-4 mb-8">
           <div className="bg-white rounded-2xl p-6 text-center shadow-lg">
-            <MessageCircle className="h-8 w-8 text-pink-500 mx-auto mb-2" />
             <div className="text-2xl font-bold text-gray-900">{messages.length}</div>
             <div className="text-gray-600">Total Messages</div>
           </div>
