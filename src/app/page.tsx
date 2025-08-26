@@ -223,17 +223,27 @@ export default function HomePage() {
                       : 'opacity-0 absolute inset-0'
                   }`}
                 >
-                  <div className="bg-white rounded-2xl p-12 border border-gray-200 shadow-lg">
-                    <div className="text-6xl mb-6">{card.emoji}</div>
-                    <h3 className="text-2xl font-bold text-gray-900 mb-4">Anonymous Message</h3>
-                    <div className="flex items-center justify-center space-x-2 mb-6">
-                      <span className="bg-pink-100 text-pink-800 px-3 py-1 rounded-full text-sm font-medium border border-pink-200">
-                        {card.category}
-                      </span>
+                  <div className="bg-gradient-to-br from-pink-100 via-white to-blue-100 rounded-2xl p-8 border-4 border-white shadow-lg" style={{ minHeight: '250px' }}>
+                    {/* Card Header */}
+                    <div className="text-center mb-6">
+                      <Heart className="h-16 w-16 text-pink-500 mx-auto mb-4" />
+                      <h3 className="text-2xl font-bold text-gray-900 mb-2">Anonymous Message</h3>
+                      <div className="flex items-center justify-center space-x-2">
+                        <span className="text-2xl">{card.emoji}</span>
+                        <span className={`px-3 py-1 rounded-full text-sm font-medium border ${card.category === 'Compliment' ? 'bg-pink-100 text-pink-800 border-pink-200' : card.category === 'Encouragement' ? 'bg-blue-100 text-blue-800 border-blue-200' : card.category === 'Gratitude' ? 'bg-green-100 text-green-800 border-green-200' : 'bg-purple-100 text-purple-800 border-purple-200'}`}>
+                          {card.category}
+                        </span>
+                      </div>
                     </div>
-                    <blockquote className="text-xl text-gray-800 leading-relaxed italic mb-6">
-                      "{card.message}"
-                    </blockquote>
+
+                    {/* Message Content */}
+                    <div className="text-center mb-6">
+                      <blockquote className="text-xl text-gray-800 leading-relaxed italic">
+                        "{card.message}"
+                      </blockquote>
+                    </div>
+
+                    {/* Card Footer */}
                     <div className="text-center text-gray-600">
                       <p className="text-sm">via Anon Uplift</p>
                     </div>
@@ -283,11 +293,6 @@ export default function HomePage() {
                 <Link href="/signin">
                   <Button size="lg" variant="secondary" className="text-lg px-8 py-3 bg-white text-pink-600 hover:bg-gray-100">
                     Get Your Uplift Link
-                  </Button>
-                </Link>
-                <Link href="/signin">
-                  <Button size="lg" variant="outline" className="text-lg px-8 py-3 border-white text-white hover:bg-white hover:text-pink-500">
-                    Sign In
                   </Button>
                 </Link>
               </>

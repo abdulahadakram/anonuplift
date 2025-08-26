@@ -13,7 +13,7 @@ export default function InboxPage() {
   const router = useRouter();
   const [messages, setMessages] = useState<MessageDoc[]>([]);
   const [loading, setLoading] = useState(true);
-  const [selectedCategory, setSelectedCategory] = useState<MessageCategory | 'all'>('all');
+  const [selectedCategory, setSelectedCategory] = useState<'all' | MessageCategory>('all');
   const [filteredMessages, setFilteredMessages] = useState<MessageDoc[]>([]);
 
   // Redirect if not authenticated
@@ -35,7 +35,7 @@ export default function InboxPage() {
     if (selectedCategory === 'all') {
       setFilteredMessages(messages);
     } else {
-      setFilteredMessages(messages.filter(msg => msg.category === selectedCategory));
+      setFilteredMessages(messages.filter(msg => msg.category === selectedCategory as MessageCategory));
     }
   }, [selectedCategory, messages]);
 
@@ -120,6 +120,32 @@ export default function InboxPage() {
 
   const formatCategoryName = (category: MessageCategory) => {
     return category.replace('_', ' ').replace(/\b\w/g, l => l.toUpperCase());
+  };
+
+  const formatFirebaseTimestamp = (timestamp: any) => {
+    if (!timestamp) return 'Unknown date';
+    
+    // Handle Firebase timestamp object
+    if (timestamp._seconds) {
+      return new Date(timestamp._seconds * 1000).toLocaleDateString();
+    }
+    
+    // Handle regular Date object or timestamp
+    if (timestamp instanceof Date) {
+      return timestamp.toLocaleDateString();
+    }
+    
+    // Handle timestamp number
+    if (typeof timestamp === 'number') {
+      return new Date(timestamp).toLocaleDateString();
+    }
+    
+    // Handle string date
+    if (typeof timestamp === 'string') {
+      return new Date(timestamp).toLocaleDateString();
+    }
+    
+    return 'Unknown date';
   };
 
   if (status === 'loading') {
@@ -311,7 +337,7 @@ export default function InboxPage() {
                 </div>
                 
                 <div className="flex items-center justify-between text-sm text-gray-500">
-                  <span>Received {new Date(message.createdAt).toLocaleDateString()}</span>
+                  <span>Received {formatFirebaseTimestamp(message.createdAt)}</span>
                   <span>From: Anonymous</span>
                 </div>
               </div>

@@ -1,5 +1,11 @@
 import { Timestamp } from 'firebase-admin/firestore';
 
+// Firebase timestamp interface for API responses
+export interface FirebaseTimestamp {
+  _seconds: number;
+  _nanoseconds: number;
+}
+
 // User document in Firestore
 export interface UserDoc {
   uid: string;
@@ -24,8 +30,8 @@ export interface MessageDoc {
   recipientId: string;
   category: MessageCategory;
   content: string;
-  createdAt: Timestamp;
-  updatedAt?: Timestamp;
+  createdAt: Timestamp | FirebaseTimestamp;
+  updatedAt?: Timestamp | FirebaseTimestamp;
   deleted?: boolean;
   reported?: boolean;
   ipHash?: string;

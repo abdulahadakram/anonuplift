@@ -69,6 +69,32 @@ export default function ShareCardPage({ params }: { params: { messageId: string 
     return category.replace('_', ' ').replace(/\b\w/g, l => l.toUpperCase());
   };
 
+  const formatFirebaseTimestamp = (timestamp: any) => {
+    if (!timestamp) return 'Unknown date';
+    
+    // Handle Firebase timestamp object
+    if (timestamp._seconds) {
+      return new Date(timestamp._seconds * 1000).toLocaleDateString();
+    }
+    
+    // Handle regular Date object or timestamp
+    if (timestamp instanceof Date) {
+      return timestamp.toLocaleDateString();
+    }
+    
+    // Handle timestamp number
+    if (typeof timestamp === 'number') {
+      return new Date(timestamp).toLocaleDateString();
+    }
+    
+    // Handle string date
+    if (typeof timestamp === 'string') {
+      return new Date(timestamp).toLocaleDateString();
+    }
+    
+    return 'Unknown date';
+  };
+
   const handleDownload = async () => {
     if (!cardRef.current) return;
 
@@ -211,7 +237,7 @@ export default function ShareCardPage({ params }: { params: { messageId: string 
 
             {/* Card Footer */}
             <div className="text-center text-gray-600">
-              <p className="text-sm">Received on {new Date(message.createdAt).toLocaleDateString()}</p>
+              <p className="text-sm">Received on {formatFirebaseTimestamp(message.createdAt)}</p>
               <p className="text-sm mt-1">via Anon Uplift</p>
             </div>
           </div>
