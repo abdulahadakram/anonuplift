@@ -275,7 +275,7 @@ export default function InboxPage() {
               <p className="text-gray-600 mb-4">
                 {selectedCategory === 'all' 
                   ? "Share your link to start receiving anonymous messages!"
-                  : `No ${selectedCategory === 'all' ? '' : formatCategoryName(selectedCategory as MessageCategory)} messages yet.`
+                  : `No ${formatCategoryName(selectedCategory as MessageCategory)} messages yet.`
                 }
               </p>
               {session?.user?.username && (
