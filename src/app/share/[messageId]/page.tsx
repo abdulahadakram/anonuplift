@@ -231,7 +231,7 @@ export default function ShareCardPage({ params }: { params: { messageId: string 
             {/* Message Content */}
             <div className="text-center mb-6">
               <blockquote className="text-xl text-gray-800 leading-relaxed italic">
-                "{message.content}"
+                &ldquo;{message.content}&rdquo;
               </blockquote>
             </div>
 
@@ -283,8 +283,8 @@ export default function ShareCardPage({ params }: { params: { messageId: string 
         {/* Instructions */}
         <div className="mt-8 text-center text-gray-600">
           <p className="text-sm">
-            💡 <strong>Tip:</strong> Right-click on the card above and select "Save image as..." 
-            to download it as a picture!
+            💡 <strong>Tip:</strong> Right-click on the card above and select &ldquo;Save image as...&rdquo; 
+to download it as a picture!
           </p>
         </div>
       </div>

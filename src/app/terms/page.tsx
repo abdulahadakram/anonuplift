@@ -97,7 +97,7 @@ export default function TermsPage() {
               <div className="bg-white rounded-2xl p-8 shadow-lg">
                 <h3 className="text-2xl font-semibold text-gray-900 mb-4">1. Acceptance of Terms</h3>
                 <p className="text-gray-700 leading-relaxed mb-4">
-                  By accessing or using Anon Uplift ("Service"), you agree to be bound by these Terms of Service ("Terms"). If you disagree with any part of these terms, you may not access the Service.
+                  By accessing or using Anon Uplift (&ldquo;Service&rdquo;), you agree to be bound by these Terms of Service (&ldquo;Terms&rdquo;). If you disagree with any part of these terms, you may not access the Service.
                 </p>
                 <p className="text-gray-700 leading-relaxed">
                   These Terms constitute a legally binding agreement between you and Anon Uplift. We reserve the right to modify these Terms at any time, and such modifications will be effective immediately upon posting on our website.
@@ -234,8 +234,8 @@ export default function TermsPage() {
                 <h3 className="text-2xl font-semibold text-gray-900 mb-4">8. Disclaimers & Limitation of Liability</h3>
                 <div className="space-y-4">
                   <div>
-                    <h4 className="text-lg font-medium text-gray-800 mb-2">Service "As Is"</h4>
-                    <p className="text-gray-700">The Service is provided "as is" and "as available" without warranties of any kind, either express or implied. We do not guarantee that the Service will be error-free or uninterrupted.</p>
+                    <h4 className="text-lg font-medium text-gray-800 mb-2">Service &ldquo;As Is&rdquo;</h4>
+                    <p className="text-gray-700">The Service is provided &ldquo;as is&rdquo; and &ldquo;as available&rdquo; without warranties of any kind, either express or implied. We do not guarantee that the Service will be error-free or uninterrupted.</p>
                   </div>
                   <div>
                     <h4 className="text-lg font-medium text-gray-800 mb-2">Limitation of Liability</h4>
@@ -276,7 +276,7 @@ export default function TermsPage() {
                 <ul className="list-disc list-inside text-gray-700 space-y-1 ml-4 mb-4">
                   <li>Post the updated Terms on our website</li>
                   <li>Send you an email notification if the changes are material</li>
-                  <li>Update the "Last Updated" date at the top of these Terms</li>
+                  <li>Update the &ldquo;Last Updated&rdquo; date at the top of these Terms</li>
                 </ul>
                 <p className="text-gray-700 leading-relaxed">
                   Your continued use of the Service after any changes indicates your acceptance of the updated Terms. If you disagree with any changes, you must stop using the Service and terminate your account.
@@ -295,7 +295,7 @@ export default function TermsPage() {
                   <p className="text-gray-700"><strong>Legal Department:</strong> Available for formal legal matters and disputes</p>
                 </div>
                 <p className="text-gray-700 leading-relaxed mt-4">
-                  For urgent legal matters, please include "URGENT LEGAL MATTER" in your email subject line.
+                  For urgent legal matters, please include &ldquo;URGENT LEGAL MATTER&rdquo; in your email subject line.
                 </p>
               </div>
             </div>

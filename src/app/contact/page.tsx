@@ -76,7 +76,7 @@ export default function ContactPage() {
           <div className="max-w-4xl mx-auto">
             <Mail className="h-20 w-20 text-pink-500 mx-auto mb-6" />
             <h1 className="text-5xl md:text-6xl font-bold text-gray-900 mb-6">
-              We're here to help!
+              We&apos;re here to help!
             </h1>
             <p className="text-xl text-gray-600 mb-8 max-w-2xl mx-auto">
               Have a question or feedback? Reach out anytime. Our support team is ready to assist you.
@@ -101,7 +101,7 @@ export default function ContactPage() {
                   </div>
                   <div>
                     <h3 className="text-lg font-medium text-green-800">Message sent successfully!</h3>
-                    <p className="text-green-700">We'll get back to you within 24 hours.</p>
+                    <p className="text-green-700">We&apos;ll get back to you within 24 hours.</p>
                   </div>
                 </div>
               </div>
@@ -246,7 +246,7 @@ export default function ContactPage() {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
               <div className="bg-white rounded-2xl p-6 shadow-lg text-left">
                 <h3 className="font-semibold text-gray-900 mb-2">How do I reset my password?</h3>
-                <p className="text-gray-600 text-sm">Use the 'Forgot Password' link on the sign-in page to receive a reset email.</p>
+                <p className="text-gray-600 text-sm">Use the &apos;Forgot Password&apos; link on the sign-in page to receive a reset email.</p>
               </div>
               <div className="bg-white rounded-2xl p-6 shadow-lg text-left">
                 <h3 className="font-semibold text-gray-900 mb-2">Can I change my username?</h3>

@@ -76,7 +76,7 @@ export default function PrivacyPage() {
               <div className="bg-white rounded-2xl p-6 text-center shadow-lg">
                 <Eye className="h-12 w-12 text-blue-500 mx-auto mb-4" />
                 <h3 className="text-lg font-semibold mb-2 text-gray-900">Full Transparency</h3>
-                <p className="text-gray-600 text-sm">We're clear about what data we collect, how we use it, and your rights to control it.</p>
+                <p className="text-gray-600 text-sm">We&apos;re clear about what data we collect, how we use it, and your rights to control it.</p>
               </div>
               <div className="bg-white rounded-2xl p-6 text-center shadow-lg">
                 <Globe className="h-12 w-12 text-green-500 mx-auto mb-4" />
@@ -213,7 +213,7 @@ export default function PrivacyPage() {
                     <ul className="list-disc list-inside text-gray-700 space-y-1 ml-4">
                       <li><strong>Access:</strong> Request a copy of your personal data</li>
                       <li><strong>Rectification:</strong> Correct inaccurate or incomplete data</li>
-                      <li><strong>Erasure:</strong> Request deletion of your data ("right to be forgotten")</li>
+                      <li><strong>Erasure:</strong> Request deletion of your data (&ldquo;right to be forgotten&rdquo;)</li>
                       <li><strong>Portability:</strong> Receive your data in a structured format</li>
                       <li><strong>Objection:</strong> Object to processing of your data</li>
                     </ul>
@@ -223,7 +223,7 @@ export default function PrivacyPage() {
                     <ul className="list-disc list-inside text-gray-700 space-y-1 ml-4">
                       <li><strong>Know:</strong> Learn what personal information we collect</li>
                       <li><strong>Delete:</strong> Request deletion of your personal information</li>
-                      <li><strong>Opt-out:</strong> Opt out of the "sale" of personal information</li>
+                      <li><strong>Opt-out:</strong> Opt out of the &ldquo;sale&rdquo; of personal information</li>
                       <li><strong>Non-discrimination:</strong> Equal service regardless of privacy choices</li>
                     </ul>
                   </div>
@@ -236,12 +236,12 @@ export default function PrivacyPage() {
 
               {/* Children's Privacy */}
               <div className="bg-white rounded-2xl p-8 shadow-lg">
-                <h3 className="text-2xl font-semibold text-gray-900 mb-4">Children's Privacy</h3>
+                <h3 className="text-2xl font-semibold text-gray-900 mb-4">Children&apos;s Privacy</h3>
                 <p className="text-gray-700 leading-relaxed mb-4">
                   Anon Uplift is not intended for children under 13 years of age. We do not knowingly collect personal information from children under 13.
                 </p>
                 <p className="text-gray-700 leading-relaxed">
-                  If you are a parent or guardian and believe your child has provided us with personal information, please contact us immediately. We will take steps to remove such information and terminate the child's account.
+                  If you are a parent or guardian and believe your child has provided us with personal information, please contact us immediately. We will take steps to remove such information and terminate the child&apos;s account.
                 </p>
               </div>
 

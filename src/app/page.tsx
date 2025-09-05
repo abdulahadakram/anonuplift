@@ -239,7 +239,7 @@ export default function HomePage() {
                     {/* Message Content */}
                     <div className="text-center mb-6">
                       <blockquote className="text-xl text-gray-800 leading-relaxed italic">
-                        "{card.message}"
+                        &ldquo;{card.message}&rdquo;
                       </blockquote>
                     </div>
 
