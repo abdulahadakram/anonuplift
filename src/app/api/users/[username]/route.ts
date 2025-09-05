@@ -30,9 +30,9 @@ export async function GET(
 
     // Return only public user information
     const publicUser = {
-      username: user.username,
-      displayName: user.displayName,
-      // Don't expose sensitive information like email, uid, etc.
+      username: username, // Use the username from the URL params
+      uid: user.uid,
+      // Don't expose sensitive information like email, etc.
     };
 
     return NextResponse.json({

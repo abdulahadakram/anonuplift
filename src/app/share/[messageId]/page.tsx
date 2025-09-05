@@ -16,6 +16,25 @@ export default function ShareCardPage({ params }: { params: { messageId: string 
   const cardRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
+    const fetchMessage = async () => {
+      try {
+        setLoading(true);
+        const response = await fetch(`/api/messages/fetch/${params.messageId}`);
+        if (response.ok) {
+          const data = await response.json();
+          setMessage(data.message);
+        } else {
+          console.error('Failed to fetch message');
+          router.push('/inbox');
+        }
+      } catch (error) {
+        console.error('Error fetching message:', error);
+        router.push('/inbox');
+      } finally {
+        setLoading(false);
+      }
+    };
+
     if (status === 'unauthenticated') {
       router.push('/signin');
       return;
@@ -24,26 +43,7 @@ export default function ShareCardPage({ params }: { params: { messageId: string 
     if (status === 'authenticated' && session?.user?.id) {
       fetchMessage();
     }
-  }, [status, session, router]);
-
-  const fetchMessage = async () => {
-    try {
-      setLoading(true);
-      const response = await fetch(`/api/messages/fetch/${params.messageId}`);
-      if (response.ok) {
-        const data = await response.json();
-        setMessage(data.message);
-      } else {
-        console.error('Failed to fetch message');
-        router.push('/inbox');
-      }
-    } catch (error) {
-      console.error('Error fetching message:', error);
-      router.push('/inbox');
-    } finally {
-      setLoading(false);
-    }
-  };
+  }, [status, session, router, params.messageId]);
 
   const getCategoryIcon = (category: string) => {
     switch (category) {
